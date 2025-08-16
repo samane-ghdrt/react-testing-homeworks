@@ -14,7 +14,7 @@
 
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import Text from "./Text";
+import Text from "../1-Text/Text";
 
 describe("Text component", () => {
   test('renders "Welcome To APS"', () => {
