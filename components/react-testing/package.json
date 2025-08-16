@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "react-scripts start",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll",
     "coverage": "npm test --coverage --watchAll --collectCoverageFrom='src/**/*.{js,jsx}'"
   },
   "dependencies": {
