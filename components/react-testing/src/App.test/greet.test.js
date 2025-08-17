@@ -1,11 +1,10 @@
 import Greet from "../3-Greet/Greet";
-import { screen,render } from "@testing-library/react";
-import '@testing-library/jest-dom';
+import { screen, render } from "@testing-library/react";
+import "@testing-library/jest-dom";
 describe("Text component", () => {
-  test('test', () => {
- 
-    render(<Greet/>);
-  const divElement = screen.getByText("hello undefined");    
+  test("test", () => {
+    render(<Greet />);
+    const divElement = screen.getByText("hello undefined");
     expect(divElement).toBeInTheDocument();
   });
   test("renders correct text when name prop is passed", () => {
