@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 describe("Text component", () => {
   test("test", () => {
     render(<Greet />);
-    const divElement = screen.getByText("hello undefined");
+    const divElement = screen.getByText("hello");
     expect(divElement).toBeInTheDocument();
   });
   test("renders correct text when name prop is passed", () => {

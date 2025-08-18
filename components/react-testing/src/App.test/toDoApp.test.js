@@ -1,14 +1,27 @@
 import TodoContainer from "../6-TodoApp/TodoContainer";
-import {screen,render, fireEvent} from '@testing-library/react';
-import "@testing-library/jest-dom"
+import { screen, render, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
 describe("todoapp", () => {
-  test('todoapp test', () => {
+  test("todoapp test", () => {
     render(<TodoContainer />);
-    const input=screen.getAllByPlaceholderText('write a todo');
-    const button=screen.getByRole('button');
-    fireEvent.click(input,{target:{value:"Learn React"}})
+    const input = screen.getByPlaceholderText("write a todo");
+    const button = screen.getByRole("button");
+    fireEvent.change(input, { target: { value: "Learn React" } });
     fireEvent.click(button);
-    expect(screen.getAllByRole("listitem")).toHveLength(1);
+    expect(screen.getAllByRole("listitem")).toHaveLength(1);
   });
-
+  test("todoapp test", () => {
+    render(<TodoContainer />);
+    const input = screen.getByPlaceholderText("write a todo");
+    const button = screen.getByRole("button");
+    fireEvent.change(input, { target: { value: "Learn React" } });
+    fireEvent.click(button);
+    fireEvent.change(input, { target: { value: "Learn React2" } });
+    fireEvent.click(button);
+    fireEvent.change(input, { target: { value: "Learn React3" } });
+    fireEvent.click(button);
+    fireEvent.change(input, { target: { value: "Learn React4" } });
+    fireEvent.click(button);
+    expect(screen.getAllByRole("listitem")).toHaveLength(4);
+  });
 });
